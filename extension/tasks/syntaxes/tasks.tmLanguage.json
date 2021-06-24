@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Tasks",
+	"patterns": [
+		{ "include": "#comment"},
+		{ "include": "#task"},
+		{ "include": "#state"}
+	],
+	"repository": {
+		"task" : {
+			"name": "meta.task.tasks",
+			"begin": "^-",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "constant.numeric.id.tasks",
+					"match": "\\[\\d+\\]"
+				},
+				{
+					"name": "storage.type.tags.tasks",
+					"begin": "\\(",
+					"end": "\\)"
+				},
+				{
+					"name":"comment.line.double-slash",
+					"begin":"//",
+					"end":"$"
+				}
+			]
+		},
+		"comment": {
+			"name":"comment.line.double-slash",
+			"begin":"//",
+			"end":"$"
+		},
+		"state": {
+			"name": "keyword.other.state.tasks",
+			"begin": "^ *# *(TODO|DONE)",
+			"end":"$",
+			"patterns": [
+				{
+					"name":"comment.line.double-slash",
+					"begin":"//",
+					"end":"$"
+				}
+			]
+		}	
+	},
+	"scopeName": "source.tasks"
+}

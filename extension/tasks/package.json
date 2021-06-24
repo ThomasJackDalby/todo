@@ -1,0 +1,25 @@
+{
+    "name": "tasks",
+    "displayName": "Tasks",
+    "description": "Syntax highlighting for .task files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tasks",
+            "aliases": ["Tasks", "tasks"],
+            "extensions": [".task"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tasks",
+            "scopeName": "source.tasks",
+            "path": "./syntaxes/tasks.tmLanguage.json"
+        }]
+    }
+}
